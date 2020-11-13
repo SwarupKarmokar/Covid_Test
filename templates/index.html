@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wellcome</title>
+    <style>
+        body{
+            background-color: rgb(255, 208, 0);
+            border-style: solid;
+            border-color: rgb(71, 145, 255);
+            text-align: center;
+        }
+
+        form{
+            background-color: rgb(165, 147, 42);
+        }
+        input{
+            text-align: center;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <h4 style="text-align: left; color: red;">Test Covid With Your Fingertips:</h4>
+    <form action="{{url_for('predict')}}" method="POST">
+        Gender: <input type="number" name="gender" placeholder = 'Male=1/Female=0'required="required" /> <br>
+        Suffocation: <input type="number" name="suffocation" placeholder = 'Yes=1/No=0'required="required" /> <br>
+        Pain_in_throat: <input type="number" name="pain_in_throat" placeholder = 'Yes=1/No=0'required="required" /> <br>
+        Smell_problem: <input type="number" name="smell_problem" placeholder = 'Yes=1/No=0'required="required" /> <br>
+        Vomiting: <input type="number" name="vomiting" placeholder = 'Yes=1/No=0'required="required" /> <br>
+        Headache: <input type="number" name="headache" placeholder = 'Yes=1/No=0'required="required" /> <br>
+
+        <button type="submit" style="color: chocolate;">predict</button>
+    </form>
+    <div>
+        <div style="color: rgb(220, 20, 20);">
+            {{prediction_text}}
+        </div>
+    </div>
+</body>
+</html>
